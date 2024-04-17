@@ -6,7 +6,7 @@ import 'firebase_options.dart';
 
 void main() async {
 // ...
-
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                             child: Image.asset(
-                              'images/image.png',
+                              'assets/images/image.png',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -148,116 +148,123 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.grey.shade300,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                      ),
                       height: 40,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "검색조건",
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          //Text('버튼일'),
-                          //Text('날짜고르기'),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          reverse: true,
+                          children: [
+                            SizedBox(
+                              width: 3,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "오늘",
-                              style: TextStyle(color: Colors.black),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.red,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "검색",
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 3,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.white,
+                            SizedBox(
+                              width: 10,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "7일",
-                              style: TextStyle(color: Colors.black),
+                            //Text('버튼일'),
+                            //Text('날짜고르기'),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "오늘",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 3,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.white,
+                            SizedBox(
+                              width: 3,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "30일",
-                              style: TextStyle(color: Colors.black),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "7일",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 3,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.white,
+                            SizedBox(
+                              width: 3,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "2일",
-                              style: TextStyle(color: Colors.black),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "30일",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 3,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.white,
+                            SizedBox(
+                              width: 3,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "3일",
-                              style: TextStyle(color: Colors.black),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "2일",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 3,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero),
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              backgroundColor: Colors.red,
+                            SizedBox(
+                              width: 3,
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              "검색",
-                              style: TextStyle(color: Colors.white),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                backgroundColor: Colors.white,
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                "3일",
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                        ],
+
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "검색조건",
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
@@ -297,110 +304,138 @@ class _MyHomePageState extends State<MyHomePage> {
                             SizedBox(
                               height: 10,
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('국가'),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero),
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    backgroundColor: Colors.white,
+                            Center(
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    height: 35,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.3,
                                   ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Global",
-                                    style: TextStyle(color: Colors.black),
+                                  Container(
+                                    height: 35,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.69,
+                                    child: ListView(
+                                      scrollDirection: Axis.horizontal,
+                                      children: [
+                                        Text('국가'),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 2,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.zero),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            backgroundColor: Colors.white,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Global",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Container(
+                                          height: 20,
+                                          width: 1,
+                                          color: Colors.grey.shade400,
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 2,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.zero),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            backgroundColor: Colors.indigo[900],
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "유럽",
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 2,
+                                            shape: RoundedRectangleBorder(
+                                                side: BorderSide(
+                                                    color: Colors.indigo),
+                                                borderRadius:
+                                                    BorderRadius.zero),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            backgroundColor:
+                                                Colors.grey.shade200,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "프랑스",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 2,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.zero),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            backgroundColor: Colors.white,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "네덜란드",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            elevation: 2,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.zero),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            backgroundColor: Colors.white,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "덴마크",
+                                            style:
+                                                TextStyle(color: Colors.black),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  height: 20,
-                                  width: 1,
-                                  color: Colors.grey.shade400,
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero),
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    backgroundColor: Colors.indigo[900],
-                                  ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "유럽",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        side: BorderSide(color: Colors.indigo),
-                                        borderRadius: BorderRadius.zero),
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    backgroundColor: Colors.grey.shade200,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "프랑스",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero),
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    backgroundColor: Colors.white,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "네덜란드",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 2,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.zero),
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    backgroundColor: Colors.white,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "덴마크",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             SizedBox(
                               height: 20,
@@ -500,7 +535,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     Image.asset(
-                      'images/image4.png',
+                      'assets/images/image4.png',
                       fit: BoxFit.fitWidth,
                       width: MediaQuery.of(context).size.width * 0.7,
                     ),
@@ -517,7 +552,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     // ),
 
                     Image.asset(
-                      'images/imagecopy.png',
+                      'assets/images/imagecopy.png',
                       fit: BoxFit.fitWidth,
                       width: MediaQuery.of(context).size.width * 0.7,
                     ),
@@ -527,17 +562,39 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.blue,
                     ),
                     Image.asset(
-                      'images/image2.png',
+                      'assets/images/image2.png',
                       fit: BoxFit.fitWidth,
                       width: MediaQuery.of(context).size.width * 0.7,
                     ),
                     Image.asset(
-                      'images/image3.png',
+                      'assets/images/image3.png',
                       fit: BoxFit.fitWidth,
                       width: MediaQuery.of(context).size.width * 0.7,
                     ),
                   ],
                 ),
+              ),
+              Column(
+                children: [
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.orange,
+                    child: Text(
+                      "준비중",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.purple,
+                    child: Text(
+                      "준비중",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
               ),
               Column(
                 children: [
@@ -570,7 +627,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Color color, String Title, String number, String percent, IconData icon) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 0.195,
-      height: 120,
+      height: MediaQuery.sizeOf(context).height * 0.15,
       decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [color, color.withOpacity(0.3)],
